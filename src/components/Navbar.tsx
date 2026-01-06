@@ -11,20 +11,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  
-  // --- LOGIKA DARK MODE (DEFAULT LIGHT) ---
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      // 1. Cek apakah user pernah menyimpan pilihan sebelumnya
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) return savedTheme;
-      
-      // 2. Jika ini kunjungan pertama (belum ada save), PAKSA jadi "light"
-      // (Kita hapus pengecekan window.matchMedia di sini)
-      return "light";
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -33,7 +20,6 @@ export default function Navbar() {
     } else {
       root.classList.remove("dark");
     }
-    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
