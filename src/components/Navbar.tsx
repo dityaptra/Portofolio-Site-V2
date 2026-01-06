@@ -12,14 +12,16 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   
-  // --- LOGIKA DARK MODE MANUAL ---
+  // --- LOGIKA DARK MODE (DEFAULT LIGHT) ---
   const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined") {
-      // Prioritaskan LocalStorage, jika tidak ada baru cek sistem
+      // 1. Cek apakah user pernah menyimpan pilihan sebelumnya
       const savedTheme = localStorage.getItem("theme");
       if (savedTheme) return savedTheme;
       
-      return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      // 2. Jika ini kunjungan pertama (belum ada save), PAKSA jadi "light"
+      // (Kita hapus pengecekan window.matchMedia di sini)
+      return "light";
     }
     return "light";
   });
@@ -37,7 +39,7 @@ export default function Navbar() {
   const toggleTheme = () => {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
-  // ------------------------------
+  // ----------------------------------------
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-emerald-100 dark:border-slate-800 transition-colors duration-300">
