@@ -130,7 +130,7 @@ export default function Hero() {
               >
                 {/* PENGGANTI NEXT/IMAGE */}
                 <img
-                  src="/images/image1.png"
+                  src="/images/image2.png"
                   alt="Gede Raditya Putra"
                   className="w-full h-full object-cover scale-110 mt-4"
                 />

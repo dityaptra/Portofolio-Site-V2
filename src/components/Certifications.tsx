@@ -6,8 +6,7 @@ const certifications = [
     title: "Java (Basic) - HackerRank",
     issuer: "HackerRank",
     date: "Jan 2025",
-    link: "/certificates/java_basic_certificate.pdf",
-    // Warna background cerah di light mode, kita biarkan text-nya saja yang menyesuaikan
+    link: "/certificates/java_basic.pdf",
     color: "bg-emerald-50 text-emerald-600 border-emerald-100", 
   },
 ];
