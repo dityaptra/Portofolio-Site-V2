@@ -42,7 +42,14 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 transition-colors duration-300"
+            // --- 1. ATRIBUT NETLIFY ---
+            method="POST"
+            name="contact" // Nama form yang akan muncul di dashboard Netlify
+            data-netlify="true" // Wajib agar Netlify mendeteksi form ini
           >
+            {/* --- 2. HIDDEN INPUT (WAJIB UNTUK REACT) --- */}
+            <input type="hidden" name="form-name" value="contact" />
+
             <div className="space-y-5">
               
               {/* Name Field */}
@@ -52,6 +59,8 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
+                  name="name" // --- 3. Tambahkan name="name"
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition"
                   placeholder="Enter your name"
                 />
@@ -64,18 +73,22 @@ export default function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email" // --- 3. Tambahkan name="email"
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition"
                   placeholder="Enter your email"
                 />
               </div>
 
-              {/* Subject Field (NEW) */}
+              {/* Subject Field */}
               <div>
                 <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
                   Subject
                 </label>
                 <input
                   type="text"
+                  name="subject" // --- 3. Tambahkan name="subject"
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition"
                   placeholder="Project Inquiry..."
                 />
@@ -88,12 +101,17 @@ export default function Contact() {
                 </label>
                 <textarea
                   rows={4}
+                  name="message" // --- 3. Tambahkan name="message"
+                  required
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-700 dark:text-white border border-slate-200 dark:border-slate-600 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 dark:focus:ring-emerald-900 outline-none transition"
                   placeholder="Enter the message..."
                 ></textarea>
               </div>
 
-              <button className="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all hover:shadow-lg hover:shadow-emerald-200 dark:hover:shadow-emerald-900 flex justify-center items-center gap-2 group cursor-pointer">
+              <button 
+                type="submit" // Pastikan type="submit"
+                className="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all hover:shadow-lg hover:shadow-emerald-200 dark:hover:shadow-emerald-900 flex justify-center items-center gap-2 group cursor-pointer"
+              >
                 Send Now
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>

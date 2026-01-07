@@ -1,13 +1,20 @@
+"use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { 
+  FaExternalLinkAlt, 
+  FaGithub, 
+  FaChevronLeft, 
+  FaChevronRight 
+} from "react-icons/fa";
 
-// Data dummy
+// Data dummy (Saya tambahkan 1 data lagi agar pagination muncul untuk demo)
 const projects = [
   {
     title: "TiketLoka",
     desc: "Aplikasi web dengan desain responsif untuk memesan tiket wisata online.",
     tech: ["Next.js", "Typescript", "Tailwind", "Laravel", "MySQL"],
-    image: "/images/projects/tiketloka.png", // Pastikan file ini ada di folder public
+    image: "/images/projects/tiketloka.png",
     link: "https://www.tiketloka.web.id/",
     github: "https://github.com/dityaptra/TiketLoka-Frontend",
   },
@@ -27,12 +34,45 @@ const projects = [
     link: "#",
     github: "#",
   },
+  {
+    title: "AI Dashboard (Demo)",
+    desc: "Project tambahan untuk mendemonstrasikan fitur pagination yang aktif.",
+    tech: ["React", "Python", "TensorFlow"],
+    image: "/images/image1.png", // Menggunakan placeholder yang ada
+    link: "#",
+    github: "#",
+  },
 ];
 
+const ITEMS_PER_PAGE = 3;
+
 export default function Projects() {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // --- LOGIC PAGINATION ---
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentProjects = projects.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Opsional: Scroll sedikit ke atas grid jika perlu
+    // document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   return (
     <section id="projects" className="py-14 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -42,10 +82,12 @@ export default function Projects() {
           Featured <span className="text-emerald-600 dark:text-emerald-400">Projects</span>
         </motion.h2>
 
+        {/* Grid Container */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project, idx) => (
+          {/* Render 'currentProjects' (data yang sudah dipotong) */}
+          {currentProjects.map((project, idx) => (
             <motion.div
-              key={idx}
+              key={`${currentPage}-${idx}`} // Key unik agar animasi ulang saat ganti halaman
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -55,7 +97,6 @@ export default function Projects() {
             >
               {/* 1. Image Area */}
               <div className="h-36 relative overflow-hidden bg-slate-200 dark:bg-slate-700">
-                {/* PENGGANTI NEXT/IMAGE */}
                 <img
                   src={project.image}
                   alt={project.title}
@@ -66,13 +107,10 @@ export default function Projects() {
 
               {/* 2. Content Area */}
               <div className="p-4 flex flex-col grow">
-                {/* Header: Title + Actions */}
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="font-bold text-slate-800 dark:text-white text-lg leading-tight group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                     {project.title}
                   </h3>
-
-                  {/* Action Icons */}
                   <div className="flex gap-2 shrink-0 ml-2">
                     <a
                       href={project.github}
@@ -95,12 +133,10 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Description */}
                 <p className="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-3 line-clamp-2">
                   {project.desc}
                 </p>
 
-                {/* Tech Stack */}
                 <div className="mt-auto flex flex-wrap gap-1.5">
                   {project.tech.map((t) => (
                     <span
@@ -115,6 +151,58 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {/* --- PAGINATION CONTROLS --- */}
+        {/* Hanya tampil jika total halaman lebih dari 1 */}
+        {totalPages > 1 && (
+          <div className="mt-12 flex justify-center items-center gap-3">
+            {/* Tombol Previous */}
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={handlePrev}
+              disabled={currentPage === 1}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 border ${
+                currentPage === 1
+                  ? "text-slate-300 dark:text-slate-600 border-slate-200 dark:border-slate-800 cursor-not-allowed"
+                  : "text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-emerald-500 hover:text-emerald-600 bg-white dark:bg-slate-800 cursor-pointer shadow-sm"
+              }`}
+            >
+              <FaChevronLeft size={14} />
+            </motion.button>
+
+            {/* Angka Halaman */}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <motion.button
+                key={page}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => handlePageChange(page)}
+                className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 shadow-sm ${
+                  currentPage === page
+                    ? "bg-emerald-600 text-white border border-emerald-600 shadow-emerald-200 dark:shadow-emerald-900/40"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 hover:text-emerald-600"
+                }`}
+              >
+                {page}
+              </motion.button>
+            ))}
+
+            {/* Tombol Next */}
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={handleNext}
+              disabled={currentPage === totalPages}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 border ${
+                currentPage === totalPages
+                  ? "text-slate-300 dark:text-slate-600 border-slate-200 dark:border-slate-800 cursor-not-allowed"
+                  : "text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-700 hover:border-emerald-500 hover:text-emerald-600 bg-white dark:bg-slate-800 cursor-pointer shadow-sm"
+              }`}
+            >
+              <FaChevronRight size={14} />
+            </motion.button>
+          </div>
+        )}
+
       </div>
     </section>
   );
