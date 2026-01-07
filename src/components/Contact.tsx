@@ -65,7 +65,7 @@ export default function Contact() {
 
             <div className="flex items-center gap-4 text-slate-600 dark:text-slate-300 mb-2">
               <FaEnvelope className="text-emerald-500" />
-              <span>email@anda.com</span>
+              <span>gdradit765@gmail.com</span>
             </div>
             <div className="flex items-center gap-4 text-slate-600 dark:text-slate-300">
               <FaMapMarkerAlt className="text-emerald-500" />
