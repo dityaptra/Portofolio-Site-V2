@@ -53,7 +53,6 @@ export default function Hero() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
           {/* TEXT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -90,14 +89,13 @@ export default function Hero() {
             </div>
 
             <p className="text-slate-600 dark:text-slate-400 text-lg mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Membangun solusi digital yang inovatif dan berpusat pada pengguna.
-              Fokus pada performa tinggi, skalabilitas, dan pengalaman pengguna
-              yang luar biasa.
+              Mengubah ide kompleks menjadi pengalaman digital yang memukau.
+              Fokus menciptakan solusi untuk membantu bisnis Anda tumbuh di era digital.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
-                href="/cv/my_cv.pdf"
+                href="/not-found"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-700 transition-all hover:shadow-lg hover:shadow-emerald-200 dark:hover:shadow-emerald-900 flex justify-center items-center gap-2 group"

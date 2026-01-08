@@ -4,7 +4,10 @@ import { FaMapMarkerAlt, FaGraduationCap, FaBriefcase } from "react-icons/fa";
 
 export default function About() {
   return (
-    <section id="about" className="py-12 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <section
+      id="about"
+      className="py-20 bg-white dark:bg-slate-900 transition-colors duration-300"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -13,30 +16,23 @@ export default function About() {
           className="mb-12"
         >
           {/* Header Section */}
-          <div className="mb-8">
+          <div className="mb-10">
             <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4 border-l-4 border-emerald-500 pl-4">
-            About Me
-          </h2>
+              About Me
+            </h2>
           </div>
 
           {/* --- Layout Utama --- */}
-          {/* 'lg:items-stretch' adalah kunci agar kiri & kanan sama tinggi */}
           <div className="flex flex-col lg:flex-row gap-10 lg:items-stretch">
             
             {/* 1. BAGIAN KIRI: FOTO PROFIL */}
-            <div className="w-full lg:w-1/3 relative rounded-xl shrink-0">
-              {/* PERBAIKAN DI SINI:
-                  1. aspect-[3/4]: Rasio tetap hanya untuk tampilan HP/Tablet.
-                  2. lg:aspect-auto: Matikan rasio di layar besar.
-                  3. lg:h-full: Paksa tinggi penuh mengikuti konten di kanan.
-              */}
-              <div className="aspect-[3/4] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden border-4 border-emerald-500 shadow-lg relative group">
+            <div className="w-full lg:w-1/3 relative shrink-0">
+              <div className="aspect-[3/4] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden border-2 border-emerald-500 shadow-xl relative">
                 <img
                   src="/images/image1.png"
                   alt="Profile Photo"
-                  className="absolute inset-0 w-full h-full object-cover transition duration-500"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 duration-300"></div>
               </div>
             </div>
 
@@ -44,78 +40,81 @@ export default function About() {
             <div className="w-full lg:w-2/3 flex flex-col gap-6">
               
               {/* Kotak Deskripsi */}
-              {/* flex-grow agar mengisi ruang jika kontennya sedikit */}
-              <div className="grow text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-emerald-500 shadow-sm transition-colors duration-300">
-                <p>
-                  Hello! I am a Computer Science student focusing on Full Stack
-                  Web Development and Artificial Intelligence. I enjoy building
-                  web applications and am curious about how to enhance them with
-                  AI capabilities.
-                </p>
-                <p>
-                  Currently, I am learning how to integrate AI into web projects
-                  and exploring Machine Learning and Deep Learning technologies.
+              <div className="grow bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+                  Hai! Saya adalah mahasiswa Ilmu Komputer yang sedang mendalami
+                  Pengembangan Web dan Kecerdasan Buatan. Saya senang membangun
+                  aplikasi web dan meningkatkannya dengan kemampuan AI. Saat
+                  ini, saya sedang belajar tentang mengintegrasikan AI ke dalam
+                  proyek web dan menjelajahi teknologi Machine Learning dan Deep
+                  Learning.
                 </p>
               </div>
 
-              {/* Kotak Quick Bio */}
-              <div className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-emerald-500 shadow-sm transition-colors duration-300">
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 relative z-10">
-                  Quick Bio
-                </h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8 relative z-10">
-                  {/* Item 1 */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 flex items-center justify-center bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-lg shrink-0">
+              {/* Kotak Bio (Clean Style - No Hover) */}
+              <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+                  
+                  {/* Item 1: Location */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-2xl shrink-0">
                       <FaMapMarkerAlt className="text-xl" />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-wider">
+                      <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">
                         Location
                       </p>
-                      <p className="text-slate-700 dark:text-slate-200 font-medium">Buleleng, Bali</p>
+                      <p className="text-slate-800 dark:text-white font-semibold text-lg leading-tight">
+                        Bali, Indonesia
+                      </p>
                     </div>
                   </div>
 
-                  {/* Item 2 */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg shrink-0">
+                  {/* Item 2: Education */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-2xl shrink-0">
                       <FaGraduationCap className="text-xl" />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-wider">
+                      <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">
                         Education
                       </p>
-                      <p className="text-slate-700 dark:text-slate-200 font-medium">Computer Science</p>
+                      <p className="text-slate-800 dark:text-white font-semibold text-lg leading-tight">
+                        Universitas Pendidikan Ganesha
+                      </p>
                     </div>
                   </div>
 
-                  {/* Item 3 */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-lg shrink-0">
+                  {/* Item 3: Current Role */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-2xl shrink-0">
                       <FaBriefcase className="text-xl" />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-wider">
+                      <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">
                         Current Role
                       </p>
-                      <p className="text-slate-700 dark:text-slate-200 font-medium">Student</p>
+                      <p className="text-slate-800 dark:text-white font-semibold text-lg leading-tight">
+                        Mahasiswa
+                      </p>
                     </div>
                   </div>
 
-                  {/* Item 4 */}
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 flex items-center justify-center bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-lg shrink-0">
+                  {/* Item 4: Hobbies */}
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 rounded-2xl shrink-0">
                       <PiBarbellFill className="text-xl" />
                     </div>
                     <div>
-                      <p className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-wider">
+                      <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">
                         Hobbies
                       </p>
-                      <p className="text-slate-700 dark:text-slate-200 font-medium">Coding & Gym</p>
+                      <p className="text-slate-800 dark:text-white font-semibold text-lg leading-tight">
+                        Workout, Coding, Gaming
+                      </p>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>

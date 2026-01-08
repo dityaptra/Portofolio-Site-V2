@@ -55,12 +55,12 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6 leading-tight">
-              Ingin Memulai <br />
-              <span className="text-emerald-600 dark:text-emerald-400">Diskusi Baru?</span>
+              Ingin Berdiskusi <br />
+              <span className="text-emerald-600 dark:text-emerald-400">Proyek Menarik?</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-md">
               Saya selalu terbuka untuk mendiskusikan proyek pengembangan perangkat lunak,
-              pengembangan kecerdasan buatan, atau sekadar peluang kemitraan.
+              pengembangan kecerdasan buatan, atau sekadar peluang kemitraan. Mari diskusikan solusi terbaik untuk kebutuhan Anda.
             </p>
 
             <div className="flex items-center gap-4 text-slate-600 dark:text-slate-300 mb-2">

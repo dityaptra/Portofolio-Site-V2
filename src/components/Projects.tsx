@@ -27,20 +27,20 @@ const projects = [
     github: "https://github.com/dityaptra/Raditya-Collection-V2",
   },
   {
-    title: "Comming Soon",
-    desc: "Sedang dalam proses pembuatan.",
+    title: "Coming Soon",
+    desc: "Sedang dalam tahap pengembangan.",
     tech: ["Node.js", "Express", "MongoDB"],
     image: "/images/image1.png",
-    link: "#",
-    github: "#",
+    link: "/gede-raditya-portofolio/src/components/NotFound.tsx",
+    github: "/gede-raditya-portofolio/src/components/NotFound.tsx",
   },
   {
-    title: "AI Dashboard (Demo)",
-    desc: "Project tambahan untuk mendemonstrasikan fitur pagination yang aktif.",
+    title: "Coming Soon",
+    desc: "Sedang dalam tahap pengembangan.",
     tech: ["React", "Python", "TensorFlow"],
     image: "/images/image1.png", // Menggunakan placeholder yang ada
-    link: "#",
-    github: "#",
+    link: "/gede-raditya-portofolio/src/components/NotFound.tsx",
+    github: "/gede-raditya-portofolio/src/components/NotFound.tsx",
   },
 ];
 
