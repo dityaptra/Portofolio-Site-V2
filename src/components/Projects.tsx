@@ -79,7 +79,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-slate-800 dark:text-white mb-12 border-l-4 border-emerald-500 pl-4"
         >
-          Featured <span className="text-emerald-600 dark:text-emerald-400">Projects</span>
+          Featured Projects
         </motion.h2>
 
         {/* Grid Container */}

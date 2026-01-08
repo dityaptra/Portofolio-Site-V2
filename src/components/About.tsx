@@ -14,10 +14,9 @@ export default function About() {
         >
           {/* Header Section */}
           <div className="mb-8">
-            <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">
-              About <span className="text-emerald-600 dark:text-emerald-400">Me</span>
-            </h2>
-            <div className="h-1.5 w-20 bg-emerald-500 rounded-full"></div>
+            <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4 border-l-4 border-emerald-500 pl-4">
+            About Me
+          </h2>
           </div>
 
           {/* --- Layout Utama --- */}
@@ -25,13 +24,13 @@ export default function About() {
           <div className="flex flex-col lg:flex-row gap-10 lg:items-stretch">
             
             {/* 1. BAGIAN KIRI: FOTO PROFIL */}
-            <div className="w-full lg:w-1/3 relative shrink-0">
+            <div className="w-full lg:w-1/3 relative rounded-xl shrink-0">
               {/* PERBAIKAN DI SINI:
                   1. aspect-[3/4]: Rasio tetap hanya untuk tampilan HP/Tablet.
                   2. lg:aspect-auto: Matikan rasio di layar besar.
                   3. lg:h-full: Paksa tinggi penuh mengikuti konten di kanan.
               */}
-              <div className="aspect-[3/4] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden shadow-lg border-2 border-slate-100 dark:border-slate-700 relative group">
+              <div className="aspect-[3/4] lg:aspect-auto lg:h-full rounded-2xl overflow-hidden border-4 border-emerald-500 shadow-lg relative group">
                 <img
                   src="/images/image1.png"
                   alt="Profile Photo"
@@ -46,7 +45,7 @@ export default function About() {
               
               {/* Kotak Deskripsi */}
               {/* flex-grow agar mengisi ruang jika kontennya sedikit */}
-              <div className="grow text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm transition-colors duration-300">
+              <div className="grow text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-emerald-500 shadow-sm transition-colors duration-300">
                 <p>
                   Hello! I am a Computer Science student focusing on Full Stack
                   Web Development and Artificial Intelligence. I enjoy building
@@ -60,7 +59,7 @@ export default function About() {
               </div>
 
               {/* Kotak Quick Bio */}
-              <div className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm transition-colors duration-300">
+              <div className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-4 bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border-2 border-emerald-500 shadow-sm transition-colors duration-300">
                 <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 relative z-10">
                   Quick Bio
                 </h3>

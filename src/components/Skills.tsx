@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 
 // --- DATA SKILLS ---
 const row1 = [
-  { name: "HTML", icon: "/icons/html5.svg" },
-  { name: "CSS", icon: "/icons/css3.svg" },
+  { name: "HTML5", icon: "/icons/html5.svg" },
+  { name: "CSS3", icon: "/icons/css3.svg" },
   { name: "JavaScript", icon: "/icons/javascript.svg" },
   { name: "React", icon: "/icons/react.svg" },
   { name: "TypeScript", icon: "/icons/typescript.svg" },
   { name: "Next.js", icon: "/icons/nextjs.svg" },
-  { name: "Tailwind", icon: "/icons/tailwindcss.svg" },
+  { name: "TailwindCSS", icon: "/icons/tailwindcss.svg" },
 ];
 
 const row2 = [
@@ -101,7 +101,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-3xl font-bold text-slate-800 dark:text-white mb-12 border-l-4 border-emerald-500 pl-4"
         >
-          Tech <span className="text-emerald-600 dark:text-emerald-400">Skills</span>
+          Technical Skills
         </motion.h2>
 
         {/* --- AREA MARQUEE --- */}

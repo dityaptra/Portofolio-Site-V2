@@ -55,7 +55,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-6 leading-tight">
-              Ingin memulai <br />
+              Ingin Memulai <br />
               <span className="text-emerald-600 dark:text-emerald-400">Diskusi Baru?</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-md">
