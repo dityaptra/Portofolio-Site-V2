@@ -27,7 +27,7 @@ const row3 = [
   { name: "Postman", icon: "/icons/postman.svg" },
   { name: "VS Code", icon: "/icons/vscode.svg" },
   { name: "TensorFlow", icon: "/icons/tensorflow.svg" },
-  { name: "PyTorch", icon: "/icons/pytorch.svg" },
+  { name: "Pandas", icon: "/icons/pandas.svg" },
   { name: "scikit-learn", icon: "/icons/scikit-learn.svg" },
 ];
 

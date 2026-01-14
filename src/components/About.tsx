@@ -24,7 +24,6 @@ export default function About() {
 
           {/* --- Layout Utama --- */}
           <div className="flex flex-col lg:flex-row gap-10 lg:items-stretch">
-            
             {/* 1. BAGIAN KIRI: FOTO PROFIL */}
             <div className="w-full lg:w-1/3 relative shrink-0">
               <div className="aspect-[3/4] lg:aspect-auto lg:h-full rounded-3xl overflow-hidden border-2 border-emerald-500 shadow-xl relative">
@@ -38,15 +37,14 @@ export default function About() {
 
             {/* 2. BAGIAN KANAN: TEKS & QUICK BIO */}
             <div className="w-full lg:w-2/3 flex flex-col gap-6">
-              
               {/* Kotak Deskripsi */}
               <div className="grow bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
                   Hai! Saya adalah mahasiswa Ilmu Komputer yang sedang mendalami
                   Pengembangan Web dan Kecerdasan Buatan. Saya senang membangun
-                  aplikasi web dan meningkatkannya dengan kemampuan AI. Saat
-                  ini, saya sedang belajar tentang mengintegrasikan AI ke dalam
-                  proyek web dan menjelajahi teknologi Machine Learning dan Deep
+                  aplikasi web, terutama dibidang Backend Development. Saat ini,
+                  saya sedang belajar tentang mengintegrasikan AI ke dalam
+                  proyek web dan menjelajahi teknologi Machine Learning & Deep
                   Learning.
                 </p>
               </div>
@@ -54,7 +52,6 @@ export default function About() {
               {/* Kotak Bio (Clean Style - No Hover) */}
               <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
-                  
                   {/* Item 1: Location */}
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 rounded-2xl shrink-0">
@@ -114,7 +111,6 @@ export default function About() {
                       </p>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
