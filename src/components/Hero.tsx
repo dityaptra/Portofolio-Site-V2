@@ -65,7 +65,7 @@ export default function Hero() {
             </p>
 
             <h1 className="text-5xl sm:text-6xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-4 leading-tight">
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-lime-500 dark:from-emerald-400 dark:to-lime-400">
+              <span className="bg-clip-text text-emerald-600 dark:text-emerald-400">
                 Gede Raditya Putra
               </span>
             </h1>
